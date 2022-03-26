@@ -1,6 +1,6 @@
-# Smart Contract 101 By AnyBlock
+# Smart Contract 101 By AnyBlock.academy
 
-Instructor: Bin Panasun (Ex. Software Engineer, True Digital Group)
+Instructor: Bin Panasun (Ex. Software Engineer & DevOps Engineer, True Digital Group)
 
 ## Lending Contract 1
 
