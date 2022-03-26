@@ -43,13 +43,13 @@ contract Lending2 {
     }
 
     function lenderDepositFund() external {
-        require(msg.sender == info.lender, "NO PERMISSION");
+        require(msg.sender == info.lender, "LENDER_DEPOSIT_FUND");
         IERC20(info.tokenA).transferFrom(msg.sender, address(this), info.loanValue);
         info.isLenderDeposit = true;
     }
 
     function borrowerClaimFund() external {
-        require(msg.sender == info.borrower && info.isLenderDeposit, "NO PERMISSION");
+        require(msg.sender == info.borrower && info.isLenderDeposit, "BORROWER_CLAIM_FUND");
         IERC20(info.tokenB).transferFrom(msg.sender, address(this), info.collateralValue);
         IERC20(info.tokenA).transfer(info.borrower, info.loanValue);
         info.lendingBlock = block.timestamp;
@@ -60,7 +60,7 @@ contract Lending2 {
         require(msg.sender == info.borrower &&
                 !info.isBorrowerPaidFund &&
                 block.timestamp <= info.lendingBlock + info.paymentPeriod,
-                "NO PERMISSION");
+                "BORROWER_PAID");
         IERC20(info.tokenA).transferFrom(msg.sender, info.lender, info.loanValue + info.interest);
         IERC20(info.tokenB).transfer(info.borrower, info.collateralValue);
         info.isBorrowerPaidFund = true;
@@ -70,8 +70,8 @@ contract Lending2 {
         require(msg.sender == info.lender &&
                 !info.isBorrowerPaidFund &&
                 block.timestamp > info.lendingBlock + info.paymentPeriod,
-                "NO PERMISSION");
-        IERC20(info.tokenB).transferFrom(address(this), info.lender, info.collateralValue);
+                "LENDER_REDEEM_FUND");
+        IERC20(info.tokenB).transfer(info.lender, info.collateralValue);
     }
 
     function getLoan() public view returns (uint256) {
