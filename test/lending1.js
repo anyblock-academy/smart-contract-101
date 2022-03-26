@@ -17,17 +17,17 @@ describe("Lending1", () => {
       50
     );
 
-    console.log("Contract:", lending1.address);
+    // console.log("Contract:", lending1.address);
 
     const balance0 = +(await borrower.getBalance());
     await lending1.connect(borrower).borrowerSign();
     const balance1 = +(await borrower.getBalance());
-    console.log("Borrower Balance:", balance0, balance1, balance0 - balance1);
+    // console.log("Borrower Balance:", balance0, balance1, balance0 - balance1);
 
     await lending1.connect(lender).lenderSign();
 
-    console.log("Borrower:", borrower.address);
-    console.log("Lender:", lender.address);
+    // console.log("Borrower:", borrower.address);
+    // console.log("Lender:", lender.address);
 
     expect(await lending1.getLoan()).to.equal(10050);
     expect(await lending1.borrower()).to.equal(borrower.address);
@@ -35,7 +35,7 @@ describe("Lending1", () => {
     expect(await lending1.isBorrowerSign()).to.equal(true);
     expect(await lending1.isLenderSign()).to.equal(true);
 
-    console.log(await lending1.getLoan());
-    console.log(await lending1.connect(borrower).borrowerSign());
+    // console.log(await lending1.getLoan());
+    // console.log(await lending1.connect(borrower).borrowerSign());
   });
 });

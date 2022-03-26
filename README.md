@@ -14,3 +14,15 @@ Instructor: Bin Panasun (Ex. Software Engineer & DevOps Engineer, True Digital G
 ตัวอย่าง Smart Contract
 [Lending1.sol](contract/Lending1.sol)
     
+## Lending Contract 2
+
+```
+ข้าพเจ้านาย A ได้ขอยืม Token A จากนาย B จำนวน 10000 หน่วย
+โดยสัญญาว่าจะคืน Token A ต้นพร้อมดอกเบี้ยรวมทั้งสิ้น 10050 หน่วย
+ภายในระยะเวลา 100 Block
+และข้าพเจ้าได้วางหลักทรัพย์ค้ำประกันเป็น Token B จำนวน 15000 หน่วย
+หากเกิน 100 Block ไปแล้วข้าพเจ้าไม่ได้คืนตามจำนวนดังกล่าว ให้นาย B ยึด Token B ทั้งหมดไปได้เลย
+```
+
+ตัวอย่าง Smart Contract
+[Lending2.sol](contract/Lending2.sol)
