@@ -26,3 +26,12 @@ Instructor: Bin Panasun (Ex. Software Engineer & DevOps Engineer, True Digital G
 
 ตัวอย่าง Smart Contract
 [Lending2.sol](contract/Lending2.sol)
+
+## ICO
+
+```
+BinCoin ต้องการเปิดขายเหรียญ ICO โดย BinCoin มีจำนวนจำกัดที่ 100000 เหรียญ
+ที่ราคาเหรียญละ 0.025 TokenA โดยต้องขายให้ได้ขั้นต่ำ 10000 เหรียญ แต่ไม่เกิน 30000 เหรียญ
+ถ้าขายได้ไม่ถึงเป้าหมายจะคืน TokenA ให้กับนักลงทุนทุกคนที่ลงทุนมา
+มีระยะเวลาในการขาย 100 block
+```
